@@ -1,45 +1,36 @@
-package com.learning;
-
+//WAP to get the array element through user using scanner class;
+//Print the size of array;
+//And print the occurance of element;
+//And search the element index number;
+//Print the index number;
 import java.util.Scanner;
 
-public class EmailCondition {
-    public static void main(String[] args) {
-    try {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter your email id");
-        String name=sc.next();
-        int length = name.length();
-        int ind = name.indexOf("a");
-        boolean valid = false;
-        for (int i = 0; i < name.length(); i++) {
-            for (int j=0;j< name.length(); j++)
-            {
-                if (name.charAt(i) == '@')
-                {
-                    if (name.charAt(j)=='.')
-                    {
-                        valid=true;
-                    }
+class LinearSearch {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
 
-                }
+        System.out.println("Enter the size of array :");
+        int max=sc.nextInt();
+        int arr[] = new int[max];
+        for (int i=0; i< max; i++)
+        {
+            System.out.println("Enter number");
+            int insertedDate= sc.nextInt();
+            arr[i]= insertedDate;
+        }
+        System.out.println("Size of array : "+arr.length);
+        System.out.println("Enter the number to search : ");
+        int numToSearch=sc.nextInt();
+        for (int i=0 ; i < arr.length; i++)
+        {
+            if(arr[i] == numToSearch)
+            {
+                System.out.println(" We found the " + numToSearch + " at " +i+ " index ");
             }
 
-
         }
-        if (valid==true)
-        {
-            System.out.println("Valid email id");
-        }
-        else
-        {
-            System.out.println("invalid email id");
-        }
-    }
-    catch (Exception e)
-    {
-        System.out.println(e.getMessage());
-    }
 
 
     }
+
 }
